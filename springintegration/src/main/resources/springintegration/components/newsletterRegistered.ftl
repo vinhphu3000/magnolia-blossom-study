@@ -1,0 +1,1 @@
+<h2>Thanks for subscribing to our newsletter!</h2>
