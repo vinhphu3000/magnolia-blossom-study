@@ -24,7 +24,7 @@ public class JspBasedTextComponent {
     public void marginsTab(TabBuilder tab) {
     }
 
-    @RequestMapping("jspbasedtext")
+    @RequestMapping("/jspbasedtext")
     public String render() {
         return "components/text.jsp";
     }

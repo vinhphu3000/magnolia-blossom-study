@@ -2,5 +2,4 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:blossom="http://www.magnolia-cms.com/schema/blossom"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.magnolia-cms.com/schema/blossom http://www.magnolia-cms.com/schema/blossom.xsd">
-    <blossom:observed-bean id="resourceService" path="/modules/springintegration/beans/resource" default-class="net.phuha.hrsystem.ResourceService"/>
 </beans>

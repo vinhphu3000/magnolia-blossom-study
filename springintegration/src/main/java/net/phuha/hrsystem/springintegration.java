@@ -3,8 +3,9 @@ package net.phuha.hrsystem;
 import info.magnolia.module.ModuleLifecycle;
 import info.magnolia.module.ModuleLifecycleContext;
 import info.magnolia.module.blossom.module.BlossomModuleSupport;
-import net.phuha.hrsystem.config.springintegrationConfiguration;
+
 import net.phuha.hrsystem.config.BlossomServletConfiguration;
+import net.phuha.hrsystem.config.springintegrationConfiguration;
 
 /**
  * This class manages the lifecycle of the springintegration module. It starts and stops Spring when Magnolia starts up and
@@ -21,11 +22,10 @@ public class springintegration extends BlossomModuleSupport implements ModuleLif
             super.initRootWebApplicationContext(springintegrationConfiguration.class);
             super.initBlossomDispatcherServlet("blossom", BlossomServletConfiguration.class);
 
-/*
             // Using Spring xml config
-            super.initRootWebApplicationContext("classpath:/applicationContext.xml");
-            super.initBlossomDispatcherServlet("blossom", "classpath:/blossom-servlet.xml");
-*/
+            // super.initRootWebApplicationContext("classpath:/applicationContext.xml");
+            // super.initBlossomDispatcherServlet("blossom", "classpath:/blossom-servlet.xml");
+
         }
     }
 

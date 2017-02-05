@@ -30,7 +30,7 @@ public class MainTemplate extends BaseTemplate {
     }
 
     @Area("main")
-    @AvailableComponentClasses({ TextComponent.class, NewsletterFormComponent.class, JspBasedTextComponent.class })
+    @AvailableComponentClasses({ TextComponent.class, NewsletterFormComponent.class, JspBasedTextComponent.class, HeaderComponent.class })
     @Controller
     public static class MainArea {
         @TabFactory("Content")
