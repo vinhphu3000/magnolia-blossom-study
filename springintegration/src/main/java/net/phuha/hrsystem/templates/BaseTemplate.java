@@ -1,4 +1,4 @@
-package net.phuha.hrsystem;
+package net.phuha.hrsystem.templates;
 
 import info.magnolia.module.blossom.annotation.TabFactory;
 import info.magnolia.ui.form.config.TabBuilder;

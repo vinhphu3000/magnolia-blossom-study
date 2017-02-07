@@ -1,4 +1,4 @@
-package net.phuha.hrsystem;
+package net.phuha.hrsystem.entity;
 
 import org.springframework.stereotype.Service;
 

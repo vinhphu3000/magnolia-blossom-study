@@ -1,4 +1,4 @@
-package net.phuha.hrsystem;
+package net.phuha.hrsystem.components;
 
 import info.magnolia.module.blossom.annotation.TabFactory;
 import info.magnolia.module.blossom.annotation.Template;
@@ -6,6 +6,8 @@ import info.magnolia.ui.form.config.TabBuilder;
 import info.magnolia.ui.framework.config.UiConfig;
 
 import javax.inject.Inject;
+
+import net.phuha.hrsystem.entity.ResourceService;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;

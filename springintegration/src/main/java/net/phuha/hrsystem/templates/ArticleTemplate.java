@@ -1,24 +1,28 @@
-package net.phuha.hrsystem;
+package net.phuha.hrsystem.templates;
 
 import info.magnolia.module.blossom.annotation.Area;
 import info.magnolia.module.blossom.annotation.AvailableComponentClasses;
 import info.magnolia.module.blossom.annotation.ComponentInheritanceMode;
 import info.magnolia.module.blossom.annotation.Inherits;
 import info.magnolia.module.blossom.annotation.TabFactory;
+import info.magnolia.module.blossom.annotation.TabOrder;
 import info.magnolia.module.blossom.annotation.Template;
 import info.magnolia.ui.form.config.TabBuilder;
 import info.magnolia.ui.framework.config.UiConfig;
+
+import net.phuha.hrsystem.components.TextComponent;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@Template(title = "Main Template", id = "springintegration:pages/mainTemplate")
-public class MainTemplate extends BaseTemplate {
+@Template(title = "Article Template", id = "springintegration:pages/article")
+@TabOrder({ "Meta", "Content" })
+public class ArticleTemplate extends BaseTemplate {
 
-    @RequestMapping("/mainTemplate")
+    @RequestMapping("/article")
     public String render() {
-        return "pages/main.ftl";
+        return "pages/article.ftl";
     }
 
     @TabFactory("Content")
@@ -30,16 +34,17 @@ public class MainTemplate extends BaseTemplate {
     }
 
     @Area("main")
-    @AvailableComponentClasses({ TextComponent.class, NewsletterFormComponent.class, JspBasedTextComponent.class, HeaderComponent.class })
+    @AvailableComponentClasses({ TextComponent.class })
     @Controller
     public static class MainArea {
-        @TabFactory("Content")
-        public void contentTab(TabBuilder tab) {
-        }
 
-        @RequestMapping("/mainTemplate/main")
+        @RequestMapping("/article/main")
         public String render() {
             return "areas/mainArea.ftl";
+        }
+
+        @TabFactory("Content")
+        public void contentTab(UiConfig cfg, TabBuilder tab) {
         }
     }
 
@@ -48,16 +53,18 @@ public class MainTemplate extends BaseTemplate {
     @Inherits(components = ComponentInheritanceMode.FILTERED)
     @Controller
     public static class PromosArea {
+
+        @RequestMapping("/article/promos")
+        public String render() {
+            return "areas/promosArea.ftl";
+        }
+
         @TabFactory("Content")
         public void contentTab(UiConfig cfg, TabBuilder tab) {
             tab.fields(
                     cfg.fields.text("heading").label("Heading")
                     );
         }
-
-        @RequestMapping("/mainTemplate/promos")
-        public String render() {
-            return "areas/promosArea.ftl";
-        }
     }
+
 }

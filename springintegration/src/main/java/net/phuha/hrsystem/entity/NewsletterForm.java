@@ -1,4 +1,4 @@
-package net.phuha.hrsystem;
+package net.phuha.hrsystem.entity;
 
 public class NewsletterForm {
     private String email;
