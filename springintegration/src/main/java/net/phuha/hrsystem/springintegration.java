@@ -20,6 +20,7 @@ public class springintegration extends BlossomModuleSupport implements ModuleLif
 
             // Using Spring java config
             super.initRootWebApplicationContext(springintegrationConfiguration.class);
+            // This is the configuration using safe-type Java class
             super.initBlossomDispatcherServlet("blossom", BlossomServletConfiguration.class);
 
             // Using Spring xml config
